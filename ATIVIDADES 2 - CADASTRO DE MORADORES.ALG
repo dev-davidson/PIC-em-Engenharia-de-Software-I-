@@ -1,0 +1,70 @@
+Algoritmo "semnome"
+// ENGENHARIA DE SOFTWARE
+// Descrição   : Atividade 2 - Cadastro dos moradores
+// Autor(a)    : Davidson Pereira de Oliveira
+// Data atual  : 10/10/2020
+
+//A prefeitura de uma cidade desenvolveu um programa para cadastro dos moradores,
+//e cada morador (não é especificada a quantidade) deve informar a sua idade.
+//A prefeitura quer obter no final do cadastro a quantidade de moradores que são eleitores obrigatório,
+//a quantidade de moradores que são eleitores facultativos e quantos moradores não são eleitores,
+//de acordo com a tabela a seguir:
+
+//>= 18 e <= 69 = Obrigatório
+//= 16 ou = 17 ou >= 70 = Facultativo
+//< 16 = Não é eleitor
+
+//Assim, faça um programa em VisualG que receba a idade de cada morador (quantidade indeterminada) e
+//obtenha as quantidades requeridas pela prefeitura.
+
+Var
+   // Seção de Declarações das variáveis
+   obrigatorio: inteiro
+   facultativo: inteiro
+   nao_eleitor: inteiro
+   contador: inteiro
+   idade: inteiro
+
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   obrigatorio:=0
+   facultativo:=0
+   nao_eleitor:=0
+   idade:=0
+
+   escreval("* Para finalizar o cadastro digite a senha: -123"," *")
+   escreval(" ")
+   enquanto idade <>-123 faca
+      escreva("=> Informe a idade do morador:")
+      leia(idade)
+
+      se(idade >0)e(idade<16)entao
+        nao_eleitor:= nao_eleitor +1
+      fimse
+
+      se(idade=16)ou(idade=17)ou(idade>=70)entao
+        facultativo:= facultativo +1
+      fimse
+
+      se(idade>=18)e(idade<=69)entao
+        obrigatorio:= obrigatorio +1
+      fimse
+
+      se (idade=-1)entao
+        contador:=0
+      fimse
+      contador:=contador +1
+      
+   fimenquanto
+   escreval(" ")
+   escreval("--- RESULTADO A AVALIAÇÂO ---")
+   escreval(" ")
+   escreval("Quantidade de moradores que são eleitores obrigatório é:",obrigatorio)
+   escreval("Quantidade de moradores que são eleitores facultativo é:",facultativo)
+   escreval("Quantidade de moradores que não são eleitores é:",nao_eleitor)
+   escreval(" ")
+   escreval("A quantidade de moradores entrevistados e:",obrigatorio+facultativo+nao_eleitor," pessoas")
+   escreval(" ")
+
+Fimalgoritmo
